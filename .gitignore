@@ -1,0 +1,39 @@
+# Ignorar diretório de ambiente virtual
+venv/
+env/
+
+# Ignorar diretório de cache do Python
+__pycache__/
+*.py[cod]
+
+# Ignorar arquivos de configurações específicas do VSCode
+.vscode/
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar outros arquivos de cache
+*.egg-info/
+.eggs/
+
+# Ignorar arquivos criados por IDEs
+.idea/
+*.swp
+*.swo
+
+# Ignorar arquivos gerados por testes
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Ignorar configurações de pacotes instalados
+*.egg
+*.wheel
+dist/
+build/
+pip-wheel-metadata/
