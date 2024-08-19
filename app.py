@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -52,6 +52,17 @@ def limpar_dados():
     conn.commit()
     conn.close()
     return jsonify({"message": "Dados limpos com sucesso"}), 200
+
+
+# Rota para a página principal
+@app.route('/')
+def index():
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM dados_sensores')
+    dados = cursor.fetchall()
+    conn.close()
+    return render_template('index.html', dados=dados)
 
 # Inicia o servidor Flask
 if __name__ == '__main__':
